@@ -3,6 +3,7 @@ const {
   getWorkouts,
   createWorkouts,
   getWorkout,
+  updateWorkouts,
   deleteWorkouts,
 } = require("../controllers/workoutControllers");
 
@@ -18,9 +19,7 @@ router.get("/:id", getWorkout);
 router.post("/", createWorkouts);
 
 // ROUTES FOR UPDATING A WORKOUT
-router.patch("/", (req, res) => {
-  res.json({ msg: "Patch all the workouts routes" });
-});
+router.patch("/:id", updateWorkouts);
 
 // ROUTES FOR DELETING A WORKOUT
 router.delete("/:id", deleteWorkouts);
