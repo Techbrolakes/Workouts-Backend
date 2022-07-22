@@ -10,8 +10,8 @@ const signupUser = async (req, res) => {
   try {
     const newUsers = await user.signup(email, password);
     res.status(200).json({ email, newUsers });
-  } catch {
-    res.status(400).json("Error signing up");
+  } catch (error) {
+    res.status(400).json({ error: error.message });
   }
 };
 
